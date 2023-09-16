@@ -1,0 +1,22 @@
+table {
+    margin: 50px auto;
+    width: 75%;
+}
+
+td.mat-cell,
+th.mat-header-cell {
+    text-align: center;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: hsla(0, 6%, 24%, 0.583);
+}
+
+td button {
+    border-radius: 9px;
+}
+
+.mat-column-id {
+    text-align: left !important;
+    border-right: 1px solid black;
+}

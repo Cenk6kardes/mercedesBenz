@@ -1,0 +1,41 @@
+<mat-card class="card mat-elevation-z8">
+    <mat-card-content>
+        <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <mat-form-field appearance="outline">
+                <mat-label>ID</mat-label>
+                <input [disabled]="true" formControlName="id" type="text" matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>CAR</mat-label>
+                <input [disabled]="true" formControlName="carID" type="text" matInput>
+            </mat-form-field>
+
+            <mat-checkbox formControlName="instock">INSTOCK</mat-checkbox>
+
+            <mat-form-field>
+                <mat-label>HORSE POWER</mat-label>
+                <input type="number" formControlName="hp" min="100" max="550" matInput>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>PRICE</mat-label>
+                <input currencyMask formControlName="price" type="text" matInput>
+            </mat-form-field>
+
+            <mat-radio-group formControlName="color" class="color-group">
+                <mat-radio-button *ngFor="let option of colorOptions$ | async" [value]="option">
+                    <div class="color-box" id="radio-color" [style.background]="option">&nbsp;</div>
+                    {{ option }}
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <div class="button-group">
+                <button mat-flat-button color="warn" (click)="goBack()">Cancel</button>
+                <button mat-raised-button color="primary" type="submit">Save</button>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>
